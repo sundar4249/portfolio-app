@@ -16,14 +16,13 @@ const Navbar = () => {
         curDate = curDate.getHours()
         if(curDate<12){
             setgreeting("Good Moring")
-        }else if(curDate >= 12 && curDate <= 20){
+        }else if(curDate >= 12 && curDate <= 18){
             setgreeting("Good Afternoon")
         }else{
             setgreeting("Good Evening")
             
         }
-
-    },[])
+    }, [])
     
     const handleNav = () =>{
         setNav(!nav)
