@@ -4,12 +4,13 @@ import {FaGithub, FaLinkedinIn} from 'react-icons/fa'
 import {SiGmail} from 'react-icons/si'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import contactImg from '../public/assets/contact.png'
-import Link from 'next/link'
+// import Link from 'next/link'
+import { Link } from 'react-scroll'
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi'
 
 const Contact = () => {
   return (
-    <div className='w-full lg:h-screen'>
+    <div id='contact' className='w-full lg:h-screen'>
         <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
             <p className='text-xl tracking-widest text-[#5651e5] uppercase'>Contact</p>
             <h2 className='py-4'>Get In Touch</h2>
@@ -86,11 +87,12 @@ const Contact = () => {
                 </div>
 
             </div>
-            <div className='flex justify-center py-12'>
-                <Link href='/' />
+            <div className='flex justify-center py-12'> 
+                <Link to='home' spy={true} smooth={true} offset={-100} duration={500}>
                 <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-200 text-[#5651e5]' >
                     <HiOutlineChevronDoubleUp size={30} />
                 </div>
+                </Link>
             </div>
 
         </div>
