@@ -2,8 +2,13 @@ import Image from 'next/image'
 import { RiRadioButtonFill } from 'react-icons/ri'
 import superImg from '../public/assets/projects/superapp.png'
 import Link  from 'next/link';
+import { useState } from 'react';
 
 const Super = () => {
+  const [door, setdoor] = useState(false)
+  const handleDoor = () => {
+    setdoor(!door)
+  }
 
 
   return (
@@ -19,7 +24,7 @@ const Super = () => {
             </div>
             <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
-          <p>Project</p>
+          <p className='uppercase tracking-widest text-[#5651e5] text-xl'>Project</p>
           <h2>Overview</h2>
           <p>
             This Super App is bulit using React JS, Mongo DB, Express Node JS. This is ride sharing and delivery app.
@@ -43,10 +48,11 @@ const Super = () => {
             <button className='px-8 py-2 mt-4'>Demo</button>
           </a>
         </div>
-        <div className= 'col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4'>
+        <div>
+        <div className= {door? 'col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4': 'hidden'}>
           <div className='p-2'>
             <p className='text-center font-bold pb-2'>Technologies</p>
-            <div className='grid grid-cols-3 md:grid-cols-1'>
+            <div className='grid grid-cols-1 md:grid-cols-1'>
               <p className='text-gray-600 py-2 flex items-center'>
                 <RiRadioButtonFill className='pr-1' /> React
               </p>
@@ -69,12 +75,19 @@ const Super = () => {
                 <RiRadioButtonFill className='pr-1' /> Multer
               </p>
             </div>
+            
           </div>
         </div>
-        <Link href='/#project'>
-          <p className='underline cursor-pointer'>Back</p>
-        </Link>
+        <div className='py-4 px-8 text-sm' >
+        <button  onClick={handleDoor}>{door? <span className='text-[18px]'>{'Click To Close'}</span> : 'Click To view Technology Used'}</button>
+        </div>
+       
+        </div>
+        
       </div>
+      <Link href='/#project'>
+          <p className='underline cursor-pointer absolute px-4 pb-10 text-[#5651e5] tracking-wider'>Back To Project</p>
+        </Link>
            
         </div>
   )

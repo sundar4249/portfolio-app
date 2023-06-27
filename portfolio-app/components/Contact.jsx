@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import {FaGithub, FaLinkedinIn} from 'react-icons/fa'
-import {SiGmail} from 'react-icons/si'
+import {FaGithub, FaLinkedinIn, FaFacebook} from 'react-icons/fa'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import contactImg from '../public/assets/contact.png'
 // import Link from 'next/link'
@@ -29,18 +28,32 @@ const Contact = () => {
                         <div>
                         <p className='uppercase pt-8'>Connect With Me</p>
                         <div className='flex items-center justify-between py-4'>
+                            <a href='https://www.linkedin.com/in/sundar-chaudhary-78588622a/'
+                           target='_blank'
+                           rel='noreferrer'>
                         <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-200'>
                     <FaLinkedinIn/>
                 </div>
+                </a>
+                <a  href='https://github.com/sundar4249'
+            target='_blank'
+            rel='noreferrer'>
                 <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-200'>
                     <FaGithub/>
                 </div>
+                </a>
+                <a href='https://www.facebook.com/alis.chaudhary4249/'  target='_blank'
+            rel='noreferrer'>
                 <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-200'>
-                    <SiGmail/>
+                    <FaFacebook/>
                 </div>
-                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-200'>
-                    <BsFillPersonLinesFill/>
+                </a>
+                <a href='/CURRICULAM_NEW-UPDATED.pdf'
+                download={true}>
+                <div className='rounded-full  shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-200'>
+                    <span className='flex items-center '>CV<BsFillPersonLinesFill/></span>
                 </div>
+                </a>
                         </div>
                     </div>
 
