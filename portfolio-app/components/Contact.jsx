@@ -1,13 +1,28 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import {FaGithub, FaLinkedinIn, FaFacebook} from 'react-icons/fa'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import contactImg from '../public/assets/contact.png'
 // import Link from 'next/link'
 import { Link } from 'react-scroll'
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi'
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_Alis4249', 'template_y1hf8z9', form.current, 'S3Be8ZwG1d6IFIBvT')
+          .then((result) => {
+              alert('Message sent');
+          }, (error) => {
+              alert('please fill the valid details');
+          });
+          e.target.reset()
+      };
+
   return (
     <div id='contact' className='w-full lg:h-screen'>
         <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
@@ -48,13 +63,17 @@ const Contact = () => {
                     <FaFacebook/>
                 </div>
                 </a>
-                <a href='/CURRICULAM_NEW-UPDATED.pdf'
-                download={true}>
+                <a href='mailto:adoring.alis4249@gmail.com'
+                >
                 <div className='rounded-full  shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-200'>
-                    <span className='flex items-center '>CV<BsFillPersonLinesFill/></span>
+                    <BsFillPersonLinesFill/>
                 </div>
                 </a>
                         </div>
+                        <a href='/CURRICULAM_NEW-UPDATED.pdf'
+                        download={true}>
+                            <button  className='text-gray-100 p-4 w-auto flex justify-center items-center mt-4 hover:scale-105 ease-in duration-300'>Download Resume</button> 
+                        </a>
                     </div>
 
                     </div>
@@ -64,33 +83,35 @@ const Contact = () => {
                 {/* ........................right side......... */}
                 <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
                     <div className='p-4'>
-                        <form>
+                        <form ref={form} onSubmit={sendEmail}>
                             <div className='grid grid-cols-2 gap-5 w-full py-2'>
                                 <div className='flex flex-col'>
                                     <label className='uppercase py-2 text-sm'>Name</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-400' type='text' />
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-400' type='text' name='user_name'/>
 
                                 </div>
                                 <div className='flex flex-col'>
                                     <label className='uppercase py-2 text-sm'>Phone Number</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-400' type='number' />
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-400' type='number'
+                                    name='user_number' />
                                 </div>
 
                             </div>
                             <div className='flex flex-col py-2'>
                             <label className='uppercase py-2 text-sm'>Email</label>
-                            <input className='border-2 rounded-lg p-3 flex border-gray-400' type='email' />
+                            <input className='border-2 rounded-lg p-3 flex border-gray-400' type='email'
+                            name='user_email' />
                             </div>
                             <div className='flex flex-col py-2'>
                             <label className='uppercase py-2 text-sm'>Subject</label>
-                            <input className='border-2 rounded-lg p-3 flex border-gray-400' type='text' />
+                            <input className='border-2 rounded-lg p-3 flex border-gray-400' type='text' name='subject' />
                             </div>
                             <div className='flex flex-col py-2'>
                             <label className='uppercase py-2 text-sm'>Message</label>
-                            <textarea className='border-2 rounded-lg shadow-gray-400 p-3' rows='10'/>
+                            <textarea className='border-2 rounded-lg shadow-gray-400 p-3' rows='10' name='message'/>
                             </div>
                             <div className='flex justify-center'>
-                            <button  className='text-gray-100 p-4 w-auto flex justify-center mt-4'>Send Message</button> 
+                            <button className='text-gray-100 p-4 w-auto flex justify-center mt-4 hover:scale-105 ease-in duration-300'>Send Message</button> 
                             </div>
                             
                         </form>

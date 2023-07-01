@@ -3,8 +3,11 @@ import superappImg from '../public/assets/projects/superapp.png'
 import portfolioImg from '../public/assets/projects/Portfolio.png'
 import ProjectItems from './ProjectItems'
 
+
 const Project = () => {
   return (
+  
+    
     <div id='project' className='w-full'>
         <div className='max-w-[1240px] mx-auto px-2 py-16'>
             <p className='uppercase tracking-widest text-xl text-[#5651e5]'>Projects</p>
@@ -24,7 +27,6 @@ const Project = () => {
              title2='Next JS'/>
             </div>
         </div>
-
     </div>
   )
 }

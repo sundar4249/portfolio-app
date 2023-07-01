@@ -11,6 +11,8 @@ const Navbar = () => {
     const [nav, setNav] = useState(false)
     const [NavShadow, setNavShadow] = useState(false)
     const [greeting, setgreeting] = useState()
+    // const [navBg, setNavBg] = useState('#ecf0f3');
+    // const [linkColor, setLinkColor] = useState('#1f2937');
 
     useEffect(()=>{
         let curDate = new Date()
@@ -39,14 +41,19 @@ const Navbar = () => {
     }
 
   return (
-    <div className={NavShadow? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
+    <div
+    // style={{ backgroundColor: `${navBg}` }}
+    style={{backgroundColor:'#D8D8D8'}}
+    className={NavShadow? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
             <Link to="home" spy={true} smooth={true} offset={-100} duration={500}>
             <Image src='/../public/assets/navLogo.gif' alt='/' width='80' height='50' className='cursor-pointer'/>
             </Link>
             
             <div>
-            <ul className='hidden md:flex'>
+            <ul 
+            // style={{ color: `${linkColor}` }}
+            className='hidden md:flex'>
                 <Link to="home" spy={true} smooth={true} offset={-100} duration={500}>
                     <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
                 </Link>
@@ -69,6 +76,8 @@ const Navbar = () => {
             
         </div>
         </div>
+          {/* Mobile Menu */}
+      {/* Overlay */}                           
         <div className={nav? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70': ''}>
             <div className={nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
             : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'}>

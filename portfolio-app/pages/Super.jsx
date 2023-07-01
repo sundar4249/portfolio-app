@@ -5,9 +5,9 @@ import Link  from 'next/link';
 import { useState } from 'react';
 
 const Super = () => {
-  const [door, setdoor] = useState(false)
-  const handleDoor = () => {
-    setdoor(!door)
+  const [dropDown, setdropDown] = useState(false)
+  const handledropDown = () => {
+    setdropDown(!dropDown)
   }
 
 
@@ -39,19 +39,19 @@ const Super = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+            <button className='px-8 py-2 mt-4 mr-8 hover:scale-105 ease-in duration-300'>Code</button>
           </a>
           <a
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4'>Demo</button>
+            <button className='px-8 py-2 mt-4 hover:scale-105 ease-in duration-300'>Demo</button>
           </a>
         </div>
         <div>
-        <div className= {door? 'col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4': 'hidden'}>
+        <div className= {dropDown? 'col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4': 'hidden'}>
           <div className='p-2'>
-            <p className='text-center font-bold pb-2'>Technologies</p>
+            <p className='text-center font-bold pb-2'>Technologies Used</p>
             <div className='grid grid-cols-1 md:grid-cols-1'>
               <p className='text-gray-600 py-2 flex items-center'>
                 <RiRadioButtonFill className='pr-1' /> React
@@ -78,8 +78,8 @@ const Super = () => {
             
           </div>
         </div>
-        <div className='py-4 px-8 text-sm' >
-        <button  onClick={handleDoor}>{door? <span className='text-[18px]'>{'Click To Close'}</span> : 'Click To view Technology Used'}</button>
+        <div className='text-gray-100 p-4 w-auto flex justify-center mt-4' >
+        <button className='text-gray-100 p-4 w-auto flex justify-center mt-4 hover:scale-105 ease-in duration-300' onClick={handledropDown}>{dropDown? 'Click To Close' : 'Click Me'}</button>
         </div>
        
         </div>
