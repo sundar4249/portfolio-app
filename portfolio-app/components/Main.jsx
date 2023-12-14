@@ -25,7 +25,7 @@ const Main = () => {
         <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
         <div>
             <p className='uppercase text-xl tracking-widest text-gray-600'><span className='text-[#5651e5] text-xl'>{greeting}</span><br/> Welcome To My Portfolio</p>
-            <h2>Hi, I'm {''} 
+            <h2>Hi, Im 
             <span className='text-[#5651e5]'>
             <Typewriter
             words={['Sundar Chaudhary', 'B.S.C.IT Graduate', 'MERN Developer', 'React/Next js Developer']}

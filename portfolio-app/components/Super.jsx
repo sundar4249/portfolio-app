@@ -29,7 +29,7 @@ const Super = () => {
           <p>
             This Super App is bulit using React JS, Mongo DB, Express Node JS. This is ride sharing and delivery app.
             This app have Multi user login function for user, admin and rider.
-            As admin can add, update and delete the product. Admin can also cance the oder placed by user's.
+            As admin can add, update and delete the product. Admin can also cance the oder placed by users.
             User have to signup and logi in order to create the order. Rider also need t create the account inorder to
             to pick the oder placed by users. Google Api is also integrated in this app to place the order in the
             exact location of the user. Socket.io is also integrated for bi-directional communication.
